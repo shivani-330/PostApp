@@ -1,0 +1,23 @@
+<br>
+<table class="table">
+  <thead class="heading-section">
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Body</th>
+      <th scope="col"></th>
+      <th scope="col">Action</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody class="table-background">
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.title %></td>
+        <td><%= post.body %></td>
+        <td><%= link_to "Edit", edit_post_path(post), :class => "link-color" %></td>
+        <td><%= link_to "Show", post_path(post), :class => "link-color" %></td>
+        <td><%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" }, :class => "link-color" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
